@@ -28,8 +28,8 @@ services:
       FIRST_BLOCKL: 1
       TRACE_FIRST_BLOCK: 0
       TRACE_LAST_BLOCK: 0
-      LOGO: "/images/findora_logo.svg"
-      LOGO_FOOTER: "/images/findora_logo.svg"
+      LOGO: "/images/blockscout_logo.svg"
+      LOGO_FOOTER: "/images/blockscout_logo.svg"
       NETWORK: "EVM Scan"
       SUBNETWORK: "Findora" 
       SUPPORTED_CHAINS: '[ { "title": "Findora Mainnet", "url": "" }, { "title": "Anvil", "url": "https://testnet-anvil.evm.findorascan.io", "test_net?": true }, { "title": "Forge", "url": "https://prod-forge-blockscout.prod.findora.org", "test_net?": true }, { "title": "QA01", "url": "https://dev-qa01-blockscout.dev.findora.org", "test_net?": true }, { "title": "QA02", "url": "http://qa02-findorascan-io.s3-website-us-west-2.amazonaws.com", "test_net?": true }, { "title": "QA04", "url": "http://qa04-findorascan-io.s3-website-us-west-2.amazonaws.com", "test_net?": true } ]'
