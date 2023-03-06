@@ -4,7 +4,7 @@ services:
   blockscout:
     depends_on:
       - smart-contract-verifier
-    image: "public.ecr.aws/k6m5b6e2/dev/blockscout:new"
+    image: "public.ecr.aws/k6m5b6e2/dev/blockscout:latest"
     restart: always
     container_name: 'blockscout'
     command: bash -c "bin/blockscout eval \"Elixir.Explorer.ReleaseTasks.create_and_migrate()\" && bin/blockscout start"
