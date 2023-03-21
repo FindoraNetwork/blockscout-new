@@ -40,33 +40,51 @@ services:
       - ./logs/:/app/logs/
 
   smart-contract-verifier:
-    image: ghcr.io/blockscout/smart-contract-verifier:latest
+    image: ghcr.io/blockscout/smart-contract-verifier@sha256:8c727cba4e15123ad3f9944bf82e7424a33207ff1fded9125d2c9b010c0e4bbe
     restart: always
     container_name: 'smart-contract-verifier'
     environment:
-      SMART_CONTRACT_VERIFIER__SERVER__ADDR: "0.0.0.0:8043"
-      SMART_CONTRACT_VERIFIER__SOLIDITY__ENABLED: "true"
-      SMART_CONTRACT_VERIFIER__SOLIDITY__COMPILERS_DIR: "/tmp/solidity-compilers"
-      SMART_CONTRACT_VERIFIER__SOLIDITY__REFRESH_VERSIONS_SCHEDULE: "0 0 * * * * *"
-      SMART_CONTRACT_VERIFIER__SOLIDITY__FETCHER__LIST__LIST_URL: "https://solc-bin.ethereum.org/linux-amd64/list.json"
-      SMART_CONTRACT_VERIFIER__VYPER__ENABLED: "true"
-      SMART_CONTRACT_VERIFIER__VYPER__COMPILERS_DIR: "/tmp/vyper-compilers"
-      SMART_CONTRACT_VERIFIER__VYPER__FETCHER__LIST__LIST_URL: "https://raw.githubusercontent.com/blockscout/solc-bin/main/vyper.list.json"
-      SMART_CONTRACT_VERIFIER__VYPER__REFRESH_VERSIONS_SCHEDULE: "0 0 * * * * *"
-      SMART_CONTRACT_VERIFIER__SOURCIFY__ENABLED: "true"
-      SMART_CONTRACT_VERIFIER__SOURCIFY__API_URL: "https://sourcify.dev/server/"
-      SMART_CONTRACT_VERIFIER__SOURCIFY__VERIFICATION_ATTEMPTS: 3
-      SMART_CONTRACT_VERIFIER__SOURCIFY__REQUEST_TIMEOUT: 10
-      SMART_CONTRACT_VERIFIER__METRICS__ENABLED: "false"
-      SMART_CONTRACT_VERIFIER__JAEGER__ENABLED: "false"
+    SMART_CONTRACT_VERIFIER__SERVER__HTTP__ENABLED: "true"
+    SMART_CONTRACT_VERIFIER__SERVER__HTTP__ADDR: "0.0.0.0:8050"
+    SMART_CONTRACT_VERIFIER__SERVER__HTTP__MAX_BODY_SIZE: "2097152"
+
+    SMART_CONTRACT_VERIFIER__SERVER__GRPC__ENABLED: "false"
+    SMART_CONTRACT_VERIFIER__SERVER__GRPC__ADDR: "0.0.0.0:8051"
+
+    SMART_CONTRACT_VERIFIER__SOLIDITY__ENABLED: "true"
+    SMART_CONTRACT_VERIFIER__SOLIDITY__COMPILERS_DIR: "/tmp/solidity-compilers"
+    SMART_CONTRACT_VERIFIER__SOLIDITY__REFRESH_VERSIONS_SCHEDULE: "0 0 * * * * *"
+
+    # It depends on the OS you are running the service on
+    SMART_CONTRACT_VERIFIER__SOLIDITY__FETCHER__LIST__LIST_URL: "https://solc-bin.ethereum.org/linux-amd64/list.json"
+
+    SMART_CONTRACT_VERIFIER__VYPER__ENABLED: "true"
+    SMART_CONTRACT_VERIFIER__VYPER__COMPILERS_DIR: "/tmp/vyper-compilers"
+    SMART_CONTRACT_VERIFIER__VYPER__REFRESH_VERSIONS_SCHEDULE: "0 0 * * * * *"
+
+    # It depends on the OS you are running the service on
+    SMART_CONTRACT_VERIFIER__VYPER__FETCHER__LIST__LIST_URL: "https://raw.githubusercontent.com/blockscout/solc-bin/main/vyper.list.json"
+
+    SMART_CONTRACT_VERIFIER__SOURCIFY__ENABLED: "true"
+    SMART_CONTRACT_VERIFIER__SOURCIFY__API_URL: "https://sourcify.dev/server/"
+    SMART_CONTRACT_VERIFIER__SOURCIFY__VERIFICATION_ATTEMPTS: "3"
+    SMART_CONTRACT_VERIFIER__SOURCIFY__REQUEST_TIMEOUT: "10"
+
+    SMART_CONTRACT_VERIFIER__METRICS__ENABLED: "false"
+    SMART_CONTRACT_VERIFIER__METRICS__ADDR: "0.0.0.0:6060"
+    SMART_CONTRACT_VERIFIER__METRICS__ROUTE: "/metrics"
+
+    SMART_CONTRACT_VERIFIER__JAEGER__ENABLED: "false"
+    SMART_CONTRACT_VERIFIER__JAEGER__AGENT_ENDPOINT: "localhost:6831"
     ports:
       - 8043:8043
     volumes:
       - ./solidity-compilers/:/tmp/solidity-compilers
       - ./vyper-compilers/:/tmp/vyper-compilers
+      - ./metrics/:/metrics
 
   visualizer:
-    image: ghcr.io/blockscout/visualizer:latest
+    image: ghcr.io/blockscout/visualizer@sha256:012bde4c73ee54a530fc6d89868ae21458a94830483b59a03ff8a1ca302c924a
     restart: always
     environment:
       VISUALIZER__SERVER__GRPC__ENABLED: "false"
