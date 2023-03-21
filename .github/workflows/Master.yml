@@ -36,7 +36,7 @@ jobs:
       with:
         images: public.ecr.aws/k6m5b6e2/release/blockscout
         tags: |
-          type=raw,value={{branch}}-{{sha}}-{{date 'x'}}
+          type=raw,value={{branch}}-{{sha}}
           type=raw,value=latest
 
     - name: Build and push Docker image
