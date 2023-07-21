@@ -7,7 +7,8 @@ $border: #E3E5EB;
 $text: #333;
 $text2: #A4A9B4;
 
-$c-dark-color: #313355;
+// $c-dark-color: #313355;
+$c-dark-color: rgba(#fff, 0.05);
 $c-dark-color-secondary: #3f426c;
 $c-dark-text-color: #8a8dba;
 
@@ -605,6 +606,7 @@ $c-dark-text-color: #8a8dba;
 
 	.card-tabs {
 		border-bottom-color: #3f426c;
+		// border-bottom-color: rgba(#fff, 0.95);
 	}
 
 	.pagination-container .pagination .page-link {

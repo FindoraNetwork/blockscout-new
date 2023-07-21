@@ -57,7 +57,9 @@ config :block_scout_web, BlockScoutWeb.SocialMedia,
   twitter: "PoaNetwork",
   telegram: "poa_network",
   facebook: "PoaNetwork",
-  instagram: "PoaNetwork"
+  instagram: "PoaNetwork",
+  medium: "PoaNetwork",
+  gitbook: "PoaNetwork"
 
 config :block_scout_web, BlockScoutWeb.Chain.TransactionHistoryChartController,
   # days

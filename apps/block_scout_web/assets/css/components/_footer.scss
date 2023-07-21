@@ -35,6 +35,10 @@ $footer-logo-width: auto !default;
   padding: 0 20px 0 0;
 }
 
+.footer-info-text2 {
+  color: $footer-title-color;
+}
+
 .footer-social-icons {
   align-items: center;
   display: flex;
@@ -118,4 +122,8 @@ $footer-logo-width: auto !default;
 
 .footer-brand {
   text-decoration: none !important;
+}
+
+.col-xs-12.col-lg-3 {
+  margin-right: 8%;
 }

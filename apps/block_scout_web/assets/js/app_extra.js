@@ -3,7 +3,7 @@ import { isDarkMode } from './lib/dark_mode'
 function applyDarkMode() {
   if (isDarkMode()) {
     document.body.className += ' ' + 'dark-theme-applied'
-    document.body.style.backgroundColor = '#1c1d31'
+    document.body.style.backgroundColor = '#131313'
   }
 }
 window.onload = applyDarkMode()
@@ -13,7 +13,7 @@ if (isDarkMode()) {
     document.getElementById('top-navbar').style.backgroundColor = '#212121'
   }
   if (document.getElementById('navbar-logo')) {
-    document.getElementById('navbar-logo').style.filter = 'brightness(0) invert(1)'
+    // document.getElementById('navbar-logo').style.filter = 'brightness(0) invert(1)'
   }
   const modeChanger = document.getElementById('dark-mode-changer')
   if (modeChanger) {

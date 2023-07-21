@@ -585,7 +585,8 @@ $cube-quantity: 5;
 }
 
 .dark-theme-applied .dark-block-loader {
-  background-color: #313355;
+  // background-color: #313355;
+  background-color: rgba(#fff, 0.05);
 }
 
 .title-with-label {
