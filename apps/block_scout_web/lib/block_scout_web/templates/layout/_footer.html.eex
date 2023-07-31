@@ -19,25 +19,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-lg-3">
-        <p class="footer-info-text"><%= gettext("GSC is a tool for inspecting and analyzing EVM-based blockchains. Blockchain explorer to support Zypher Games transaction data.") %></p>
-        <h3 class="footer-info-text2"><%= gettext("Zypher Games Medias") %></h3>
-        <div class="footer-social-icons">
-          <a href="<%= Application.get_env(:block_scout_web, :footer)[:github_link] %>" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
-            <div class="footer-social-icon-container fontawesome-icon github"></div>
-          </a>
-          <a href="https://twitter.com/Zypher_Games" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
-            <div class="footer-social-icon-container fontawesome-icon twitter"></div>
-          </a>
-          <a href="https://t.me/findoraen" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
-            <div class="footer-social-icon-container fontawesome-icon telegram"></div>
-          </a>
-          <a href="https://medium.com/@ZypherGames" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Medium") %>'>
-            <div class="footer-social-icon-container fontawesome-icon medium"></div>
-          </a>
-          <a href="https://zypher-games.gitbook.io" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Gitbook") %>'>
-            <div class="footer-social-icon-container fontawesome-icon gitbook"></div>
-          </a>
-        </div>
+        <p class="footer-info-text"><%= gettext("GSC is a tool for inspecting and analyzing EVM-based blockchains.") %></p>
       </div>
 
       <% main_nets = main_nets(other_networks()) %>

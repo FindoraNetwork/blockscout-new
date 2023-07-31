@@ -2398,7 +2398,7 @@ msgstr ""
 
 #: lib/block_scout_web/templates/layout/_footer.html.eex:22
 #, elixir-autogen, elixir-format
-msgid "GSC is a tool for inspecting and analyzing EVM-based blockchains. Blockchain explorer to support Zypher Games transaction data."
+msgid "GSC is a tool for inspecting and analyzing EVM-based blockchains."
 msgstr ""
 
 #: lib/block_scout_web/templates/layout/_footer.html.eex:23
