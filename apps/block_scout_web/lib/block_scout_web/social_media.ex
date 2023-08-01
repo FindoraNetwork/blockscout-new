@@ -7,7 +7,9 @@ defmodule BlockScoutWeb.SocialMedia do
     facebook: "https://www.facebook.com/",
     instagram: "https://www.instagram.com/",
     twitter: "https://www.twitter.com/",
-    telegram: "https://t.me/"
+    telegram: "https://t.me/",
+    medium: "https://www.medium.com/",
+    gitbook: "https://www.gitbook.io/"
   }
 
   def links do

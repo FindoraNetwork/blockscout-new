@@ -19,18 +19,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-lg-3">
-        <p class="footer-info-text"><%= gettext("Findora Smart Chain Block Explorer inspects and analyzes EVM-based transactions.") %></p>
-        <div class="footer-social-icons">
-          <a href="<%= Application.get_env(:block_scout_web, :footer)[:github_link] %>" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
-            <div class="footer-social-icon-container fontawesome-icon github"></div>
-          </a>
-          <a href="https://twitter.com/Findora" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
-            <div class="footer-social-icon-container fontawesome-icon twitter"></div>
-          </a>
-          <a href="https://t.me/findoraen" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
-            <div class="footer-social-icon-container fontawesome-icon telegram"></div>
-          </a>
-        </div>
+        <p class="footer-info-text"><%= gettext("GSC is a tool for inspecting and analyzing EVM-based blockchains.") %></p>
       </div>
 
       <% main_nets = main_nets(other_networks()) %>
@@ -61,9 +50,9 @@
 
       <%= unless Enum.empty?(other_explorers) do %>
         <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
-          <h3><%= gettext("Other Explorers") %></h3>
+          <h3><%= gettext("Other") %></h3>
           <ul>
-            <%= for {name, url} <- other_explorers do %>
+            <%= for %{name: name, url: url} <- other_explorers do %>
               <li><a href="<%= url %>" rel="noreferrer" class="footer-link"> <%= name %> </a></li>
             <% end %>
           </ul>

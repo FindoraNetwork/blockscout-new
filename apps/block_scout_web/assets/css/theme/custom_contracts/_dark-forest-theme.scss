@@ -12,17 +12,17 @@ $dark-primary-alternate: $dark-primary;
 	color: #ffffff;
 	background-color: $body-dark;
 
-	.dark-mode-changer--dark svg path {
-		fill: $dark-primary;
-	}
+	// .dark-mode-changer--dark svg path {
+	// 	fill: $dark-primary;
+	// }
 
 	// navbar
 	.navbar.navbar-primary {
 		background-color: $dark-light-bg !important;
 	}
-	.navbar-brand .navbar-logo {
-		filter: brightness(0) invert(1);
-	}
+	// .navbar-brand .navbar-logo {
+	// 	filter: brightness(0) invert(1);
+	// }
 	.navbar.navbar-primary .navbar-nav .nav-link {
 		color: $labels-dark;
 		.nav-link-icon {

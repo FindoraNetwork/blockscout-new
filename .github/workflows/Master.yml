@@ -34,7 +34,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v3
       with:
-        images: public.ecr.aws/k6m5b6e2/release/blockscout
+        images: public.ecr.aws/k6m5b6e2/release/blockscout-asc
         tags: |
           type=raw,value={{branch}}-{{sha}}
           type=raw,value=latest
